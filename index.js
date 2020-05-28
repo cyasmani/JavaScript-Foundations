@@ -209,11 +209,50 @@ console.log(variableInterestRate(200000,0.004167,360))
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
 
+function monthlyspending(p,i,n,tax,insurance,hoa){
+
+    var numerator = 1 + i;
+    var numerator1 = Math.pow(numerator, n);
+    var numerator2 = i * numerator1;
+
+    var denominator = 1 + i;
+    var denominator1 = Math.pow(denominator, n);
+    var denominator2 = denominator1 - 1;
+
+    var answer = numerator2 / denominator2;
+    var monthlyRate1 = p * answer;
+
+    var monthlyCost = monthlyRate1 + tax + insurance + hoa
+
+    return Math.round(monthlyCost);
+
+
+
+
+
+}
+
+console.log(monthlyspending(200000, 0.004167, 360, 300, 250, 120))
+
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
 
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
+
+ let number1 = window.prompt("Enter a number: ");
+let number2 = window.prompt("Enter a number: ");
+
+
+function addition(number1,number2){
+
+
+
+    let sum = parseInt(number1) + parseInt(number2);
+    return sum;
+}
+
+console.log(addition(number1,number2));
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
